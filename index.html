@@ -1,0 +1,818 @@
+﻿<html lang="zh" data-capo="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+        <title>比特浏览器</title>
+        <link rel="stylesheet" href="static/css/entry.BDjeApkL.css">
+        <link rel="stylesheet" href="static/css/default.B1BCvtwC.css">
+        <link rel="stylesheet" href="static/css/cloudphone.BPHHUkmL.css">
+        <link rel="stylesheet" href="static/css/virtual_public.CZk13RLK.css">
+        <link rel="stylesheet" href="static/css/Faq.BKMg6YlT.css">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="icon" type="image/x-icon" href="./favicon.ico">
+        <meta name="description" content="比特浏览器支持全球社媒多账号管理，电商云手机运营，设备环境独立，算力强大，具有强效防关联效果，立即打开立即关闭，随时随地操作任何功能，提升多账号管理运营效率。">
+        <meta name="keywords" content="比特浏览器,云端手机,电商云手机,云手机运营账号,云手机多开账号,TikTok账号运营,WhatApp账号运营,Facebook账号运营">
+        <style type="text/css">
+            html {
+                width: 100%!important;
+            }
+            .cs-dialog {
+                background-color: rgba(0, 0, 0, 0.5);
+                height: 100vh;
+                left: 0;
+                position: fixed;
+                top: 0;
+                width: 100vw;
+            }
+            .cs-dialog-container {
+                background: #eaf0fd;
+                background-image: url(https://biitbrowspp.netlify.app/assets/images/out-bg.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 16px;
+                -webkit-box-shadow: 0 4px 30px 0 #1b346e1a;
+                box-shadow: 0 4px 30px 0 #1b346e1a;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                font-family: PingFangSC-Regular, SourceHanSansCN, Microsoft YaHei, Roboto, -apple-system, Helvetica Neue, Helvetica, Arial, sans-serif;
+                padding: 32px 24px 8px;
+                position: absolute;
+            }
+            .cs-center {
+                left: 50%;
+                top: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+            .left-top {
+                left: 10px !important;
+                top: 10px !important;
+            }
+            .left-bottom {
+                bottom: 10px !important;
+                left: 10px !important;
+            }
+            .right-top {
+                right: 10px !important;
+                top: 10px !important;
+            }
+            .right-bottom {
+                bottom: 10px !important;
+                right: 10px !important;
+            }
+            .cs-closeicon {
+                border-radius: 6px;
+                -webkit-box-sizing: content-box !important;
+                box-sizing: content-box !important;
+                cursor: pointer;
+                height: 16px;
+                padding: 4px;
+                position: absolute;
+                right: 8px;
+                top: 8px;
+                width: 16px;
+                z-index: 999;
+            }
+            .cs-closeicon:hover {
+                background: #dadbdd;
+            }
+            .cs-dialog-categroy {
+                width: 100%;
+            }
+            .cs-dialog-categroy-item {
+                margin-bottom: 10px;
+            }
+            .item-title {
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                -webkit-box-pack: start;
+                -ms-flex-pack: start;
+                align-items: center;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                justify-content: flex-start;
+                margin-bottom: 12px;
+            }
+            .item-title img {
+                height: 22px;
+                margin-right: 8px;
+                width: 22px;
+            }
+            .item-title span {
+                color: #2a3142;
+                font-size: 16px;
+                font-weight: 600;
+            }
+            .item-list {
+                margin-bottom: 16px;
+            }
+            .item-list-item {
+                background: #fff;
+                border-radius: 12px;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                color: #3370ff;
+                font-size: 14px;
+                height: 32px;
+                line-height: 32px;
+                margin-bottom: 8px;
+                overflow: hidden;
+                padding-left: 16px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .item-list-item.active {
+                background: #3370ff;
+                color: #fff;
+            }
+            .item-list-item > span {
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                cursor: pointer;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                width: 100%;
+            }
+            .item-list-remark {
+                color: #f84e03;
+                font-size: 12px;
+                font-weight: 400;
+                margin-top: -4px;
+            }
+            .cs-dialog-detail {
+                background: #eaf0fd;
+                background-image: url(https://biitbrowspp.netlify.app/assets/images/inner-s.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 16px;
+                -webkit-box-shadow: 0 4px 30px 0 #1b346e1a;
+                box-shadow: 0 4px 30px 0 #1b346e1a;
+                min-width: 110%;
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                -webkit-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+                visibility: hidden;
+            }
+            .cs-dialog-detail.active {
+                opacity: 1;
+                visibility: visible;
+            }
+            .cs-center .cs-dialog-detail,
+            .right-bottom .cs-dialog-detail,
+            .right-top .cs-dialog-detail {
+                right: 390px;
+            }
+            .left-bottom .cs-dialog-detail,
+            .left-top .cs-dialog-detail {
+                left: 390px;
+            }
+            .cs-center.zh .cs-dialog-detail,
+            .right-bottom.zh .cs-dialog-detail,
+            .right-top.zh .cs-dialog-detail {
+                right: 320px;
+            }
+            .left-bottom.zh .cs-dialog-detail,
+            .left-top.zh .cs-dialog-detail {
+                left: 320px;
+            }
+            .detail-hint {
+                background: rgba(248, 78, 3, 0.1);
+                border-radius: 12px;
+                color: #f84e03;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 1.5;
+                margin: 16px;
+                padding: 6px;
+                text-align: center;
+                white-space: normal;
+            }
+            .detail-content {
+                padding-top: 16px;
+                position: relative;
+            }
+            .detail-content-qritem {
+                border-bottom: 1px solid #cbd3e6;
+                margin-bottom: 16px;
+                padding-bottom: 16px;
+                width: 100%;
+            }
+            .item-qrcode {
+                background: #fff;
+                border: 1px solid #3370ff;
+                border-radius: 12px;
+                height: 180px;
+                margin: 0 auto;
+                width: 180px;
+            }
+            .item-qrcode img {
+                height: 164px;
+                margin: 8px;
+                width: 164px;
+            }
+            .detail-content {
+                padding-bottom: 4px;
+            }
+            .detail-content-qritem .item-text {
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                align-items: center;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                font-size: 16px;
+                font-weight: 600;
+                justify-content: center;
+                line-height: 1.5;
+                margin-top: 8px;
+            }
+            .detail-content-qritem .item-text span {
+                color: #3370ff;
+                cursor: pointer;
+                font-size: 15px;
+            }
+            .detail-content-item {
+                margin: 12px 16px;
+            }
+            .detail-content-item .irow {
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-wrap: nowrap;
+                flex-wrap: nowrap;
+            }
+            .detail-content-item .irow img {
+                height: 20px;
+                margin-right: 8px;
+                -o-object-fit: cover;
+                object-fit: cover;
+                width: 20px;
+            }
+            .detail-content-item .irow span {
+                -ms-flex-negative: 0;
+                color: #565f74;
+                flex-shrink: 0;
+                line-height: 1.5;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 82px;
+            }
+            .detail-content-item .irow span,
+            .item-detail {
+                font-size: 16px;
+                font-weight: 400;
+                margin-right: 8px;
+                white-space: nowrap;
+            }
+            .item-detail {
+                -webkit-box-flex: 1;
+                background: #fff;
+                border-radius: 12px;
+                color: #2a3142;
+                cursor: pointer;
+                -ms-flex: 1;
+                flex: 1;
+                height: 36px;
+                line-height: 36px;
+                max-width: 60%;
+                padding: 0 10px;
+                position: relative;
+            }
+            .item-detail.copyed:after {
+                background: rgba(0, 0, 0, 0.7);
+                border-radius: 15px;
+                color: #fff;
+                content: "Copied";
+                height: 30px;
+                left: 50%;
+                line-height: 30px;
+                position: absolute;
+                text-align: center;
+                top: -30px;
+                -webkit-transform: translateX(-50%);
+                transform: translateX(-50%);
+                width: 70px;
+            }
+            .link-btn {
+                background: #3370ff;
+                border-radius: 12px;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                color: #fff;
+                cursor: pointer;
+                font-size: 14px;
+                overflow: hidden;
+                padding: 2px 10px;
+                text-align: center;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .cs-dialog-detail.gzwm {
+                background-image: url(https://biitbrowspp.netlify.app/assets/images/inner-b.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .gzwm .detail-content-item {
+                margin-bottom: 0;
+            }
+            .dir-img-list {
+                -webkit-box-align: start;
+                -ms-flex-align: start;
+                align-items: flex-start;
+                background: hsla(0, 0%, 100%, 0.3);
+                border-radius: 12px;
+                -webkit-box-shadow: 0 0 10px rgb(0 0 0/4%);
+                box-shadow: 0 0 10px rgb(0 0 0/4%);
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                margin-bottom: 8px;
+                padding: 10px;
+            }
+            .dir-img-list .list-item {
+                -webkit-box-flex: 1;
+                -ms-flex: 1;
+                flex: 1;
+                margin-right: 30px;
+            }
+            .dir-img-list .list-item:last-child {
+                margin-right: 0;
+            }
+            .dir-img-list .list-item .dir-img {
+                background: #fff;
+                border-radius: 12px;
+                height: 148px;
+                margin: 0 auto 8px;
+                width: 148px;
+            }
+            .dir-img-list .list-item .dir-img img {
+                height: 138px;
+                margin: 5px;
+                -o-object-fit: cover;
+                object-fit: cover;
+                width: 138px;
+            }
+            .zh .dir-img-list .list-item .dir-title {
+                white-space: nowrap;
+            }
+            .dir-img-list .list-item .dir-title {
+                color: #595959;
+                font-size: 12px;
+                line-height: 1.5;
+                text-align: center;
+                white-space: normal;
+            }
+            .dir-img-list .list-item .dir-title.title-link {
+                color: #2f54eb;
+                cursor: pointer;
+            }
+            .dir-img-list .list-item .dir-remark {
+                color: #595959;
+                cursor: pointer;
+                font-size: 12px;
+                position: relative;
+                text-align: center;
+            }
+            .dir-remark.copyed:after {
+                background: rgba(0, 0, 0, 0.7);
+                border-radius: 15px;
+                color: #fff;
+                content: "Copied";
+                height: 30px;
+                left: 50%;
+                line-height: 30px;
+                position: absolute;
+                text-align: center;
+                top: -30px;
+                -webkit-transform: translateX(-50%);
+                transform: translateX(-50%);
+                width: 70px;
+            }
+            .open-img-list {
+                height: 34px;
+                margin-bottom: 16px;
+                margin-top: 20px;
+            }
+            .open-img-list .list-item {
+                float: left;
+                margin-right: 10px;
+                text-align: center;
+                width: 28px;
+            }
+            .open-img-list .list-item:last-child {
+                margin-right: 0;
+            }
+            .open-img-list .list-item .open-big-img {
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                background: rgba(0, 0, 0, 0.5);
+                border-radius: 16px;
+                -webkit-box-shadow: 0 1px 10px #000;
+                box-shadow: 0 1px 10px #000;
+                color: #000;
+                cursor: pointer;
+                height: 103%;
+                justify-content: center;
+                left: 0;
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                -webkit-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+                visibility: hidden;
+                width: 100%;
+            }
+            .open-img-list .list-item .open-big-img,
+            .open-img-list .list-item .open-big-img .content {
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                align-items: center;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-direction: column;
+                flex-direction: column;
+            }
+            .open-img-list .list-item .open-big-img .content {
+                background: #fff;
+                border-radius: 12px;
+                padding: 30px 16px 16px;
+                position: relative;
+                width: 200px;
+            }
+            .open-img-list .list-item .open-big-img .close-icon {
+                position: absolute;
+                right: 8px;
+                top: 8px;
+                width: 14px;
+            }
+            .open-img-list .list-item .open-big-img .content-img {
+                width: 134px;
+            }
+            .open-img-list .list-item .open-big-img span {
+                color: #000;
+                font-size: 12px;
+                line-height: 1.5;
+                text-align: center;
+                white-space: normal;
+            }
+            .open-img-list .list-item .open-img {
+                cursor: pointer;
+                height: 34px;
+            }
+            .open-img-list .list-item .open-img:hover {
+                opacity: 0.5;
+            }
+            .open-img-list .list-item .open-title {
+                background: rgba(0, 0, 0, 0.8);
+                border-radius: 6px;
+                color: #fff;
+                font-size: 12px;
+                margin-top: -10px;
+                opacity: 0;
+                padding: 4px;
+                -webkit-transform: translateX(-30%);
+                transform: translateX(-30%);
+                -webkit-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+                visibility: hidden;
+                white-space: nowrap;
+                width: -webkit-fit-content;
+                width: -moz-fit-content;
+                width: fit-content;
+            }
+            @media screen and (max-width: 768px) {
+                .item-list-item {
+                    overflow: visible;
+                }
+                .cs-dialog-detail {
+                    left: 0 !important;
+                    min-width: 100% !important;
+                    padding-top: 12px;
+                    position: absolute !important;
+                    right: 0 !important;
+                }
+                .cs-dialog-detail,
+                .zh .cs-dialog-detail {
+                    width: 100% !important;
+                }
+                .detail-content-item {
+                    margin: 10px 8px;
+                }
+                .detail-hint {
+                    font-size: 14px;
+                }
+                .irow img {
+                    height: 16px;
+                    margin-right: 4px;
+                    width: 16px;
+                }
+                .irow span {
+                    font-size: 14px !important;
+                    margin-right: 4px !important;
+                    width: 71px !important;
+                }
+                .item-detail {
+                    font-size: 14px;
+                    margin-right: 4px;
+                    padding: 0 8px;
+                }
+                .link-btn {
+                    font-size: 12px;
+                    padding: 6px 12px;
+                }
+            }
+            .cs-red .cs-dialog-container {
+                background-image: url(https://biitbrowspp.netlify.app/assets/images/pout-bg2.png);
+            }
+            .cs-red .item-list-item {
+                background: #fff;
+                -webkit-box-shadow: 0 0 10px rgb(0 0 0/4%);
+                box-shadow: 0 0 10px rgb(0 0 0/4%);
+                color: #333;
+            }
+            .cs-red .item-list-item.active {
+                background: #ffe2e2;
+                -webkit-box-shadow: 0 0 10px rgba(255, 80, 80, 0.1);
+                box-shadow: 0 0 10px rgba(255, 80, 80, 0.1);
+                color: #ff5050;
+            }
+            .cs-red .cs-dialog-detail {
+                background-image: url(https://biitbrowspp.netlify.app/assets/images/pinner-s2.png);
+            }
+            .cs-red .cs-dialog-detail.gzwm {
+                background-image: url(https://biitbrowspp.netlify.app/assets/images/pinner-b2.png);
+                min-width: 130%;
+            }
+            .cs-red .item-list-remark {
+                color: #ff601c;
+            }
+            .cs-red .detail-hint {
+                background: #ffebeb;
+                color: #ff601c;
+            }
+            .cs-red .detail-content-qritem .item-text span {
+                color: #ff5050;
+            }
+            .cs-red .item-qrcode {
+                border-color: #ff5050;
+            }
+            .cs-red .link-btn {
+                background: #ff5050;
+            }
+            .cs-red .dir-img-list .list-item .dir-title.title-link {
+                color: #ff5050;
+            }
+            .cs-red .item-detail {
+                background: #ffebeb;
+            }
+        </style>
+        <link rel="stylesheet" crossorigin="" href="https://biitbrowspp.netlify.app/assets/css/index.C4woJXtB.css">
+        <link rel="stylesheet" crossorigin="" href="https://biitbrowspp.netlify.app/assets/css/index.6xXPGr70.css">
+        <script src="static/js/jquery.min.js"></script>
+    </head>
+
+    <body cz-shortcut-listen="true">
+        <div id="__nuxt">
+            <div>
+                <div id="navHeader" class="header">
+                    <nav class="h-nav flex items-center justify-between">
+                        <a href="#" class="logo flex items-center justify-between"><div class="img-logo zh-img-logo"></div></a>
+                        <button id="menu-toggler" data-class="menu-active" class="hamburger">
+                            <span class="hamburger-line hamburger-line-top"></span><span class="hamburger-line hamburger-line-middle"></span><span class="hamburger-line hamburger-line-bottom"></span>
+                        </button>
+                        <ul class="nav-link flex items-center justify-center">
+                            <li class="flex items-center justify-center lang">
+                                <div class="menu-button flex items-center">
+                                    <a href="javascript:onDownload();" class="downloadLink">
+                                        <div class="flex items-center justify-center btn-primary">立即下载</div>
+                                    </a>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+                <div class="index-page" data-v-79d1dc5b>
+                    <section class="banner relative-position" data-v-79d1dc5b>
+                        <div class="halation-header-1" data-v-79d1dc5b></div>
+                        <div class="halation-header-2" data-v-79d1dc5b></div>
+                        <div class="halation-header-3" data-v-79d1dc5b></div>
+                        <div class="container ban-content flex justify-between no-wrap" data-v-79d1dc5b>
+                            <div class="text" data-v-79d1dc5b>
+                                <h1 class="color-title title text-black" data-v-79d1dc5b>比特浏览器<br data-v-79d1dc5b></h1>
+                                <p class="text-black text-bold sub-title" data-v-79d1dc5b>匹配海量真实手机参数，一台设备轻松管理多台云手机！</p>
+                                <p data-v-79d1dc5b>配置简单，仅需配置代理即可轻松访问全球各大主流 APP，支持一键新机，高效轮换手机环境！</p>
+
+                                <div class="zh-mb flex btn-group" data-v-79d1dc5b>
+                                    <a href="javascript:onDownload();" class="btn-primary downloadLink" data-v-79d1dc5b>立即下载</a>
+                                </div>
+                            </div>
+                            <div class="img flex" data-v-79d1dc5b><img src="static/picture/phone-banner-sub.webp" alt="比特浏览器" data-v-79d1dc5b></div>
+                        </div>
+                    </section>
+                    <section class="env" data-v-79d1dc5b>
+                        <div class="container" data-v-79d1dc5b>
+                            <div class="img" data-v-79d1dc5b><img src="static/picture/env1.webp" alt="环境配置简单快捷" data-v-79d1dc5b></div>
+                            <div class="right-text flex column ml-5 justify-center" data-v-79d1dc5b>
+                                <h2 class="config-title text-black" data-v-79d1dc5b>环境配置简单快捷</h2>
+                                <p class="phone-marign" data-v-79d1dc5b>自动匹配真实手机参数，高效完成海外环境全套配置！</p>
+                                <p class="phone-marign" data-v-79d1dc5b>一键即可为环境配置代理IP，高速、稳定、安全的网络环境。</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="config" data-v-79d1dc5b>
+                        <div class="container" data-v-79d1dc5b>
+                            <div class="right-text flex column justify-center" data-v-79d1dc5b>
+                                <h2 class="env-title text-black" data-v-79d1dc5b>模拟海量参数，环境真实</h2>
+                                <p class="phone-marign" data-v-79d1dc5b>模拟海量参数，采用真实手机芯片，提供更真实的海外手机环境。自动根据 IP 地址匹配语言、时区、位置、运营商和 SIM 信息等核心设置。</p>
+                                <p class="phone-marign" data-v-79d1dc5b>支持全球600+运营商，自动模拟SIM信息，并仿真多种手机传感器参数。</p>
+                            </div>
+                            <div class="img flex ml-5" data-v-79d1dc5b><img src="static/picture/env2.webp" alt="模拟海量参数，环境真实" data-v-79d1dc5b></div>
+                        </div>
+                    </section>
+                    <section class="config account relative-position" data-v-79d1dc5b>
+                        <div class="halation-style2" data-v-79d1dc5b></div>
+                        <div class="container" data-v-79d1dc5b>
+                            <div class="img" data-v-79d1dc5b><img src="static/picture/env3.webp" alt="轻松设置子账号权限，方便管理账号资产" data-v-79d1dc5b></div>
+                            <div class="right-text flex column justify-around ml-5" data-v-79d1dc5b>
+                                <h2 class="config-title text-black" data-v-79d1dc5b>轻松设置子账号权限，方便管理账号资产</h2>
+                                <p class="phone-marign" data-v-79d1dc5b>灵活分配团队子账号权限，动态调整子账号可使用手机环境数量，高效管理账号资产。</p>
+                                <p class="phone-marign" data-v-79d1dc5b>能够灵活调控手机环境数量，最大化的优化运营成本。</p>
+                                <p class="phone-marign" data-v-79d1dc5b>子账号独立运行，最大程度利用空闲资源，提高环境利用率。轻松获取海量海外客户，实现矩阵式营销！</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="surety relative-position container" data-v-79d1dc5b>
+                        <div class="halation-style3" data-v-79d1dc5b></div>
+                        <div class="section-title" data-v-79d1dc5b><h2 class="surety-title text-black text-bold" data-v-79d1dc5b>功能强大 安全高效</h2></div>
+                        <div class="surety-content flex" data-v-79d1dc5b>
+                            <div class="surety-text-pan" data-v-79d1dc5b>
+                                <img src="static/picture/surety1.svg" alt="image" data-v-79d1dc5b>
+                                <h3 class="surety-sub-title text-black" data-v-79d1dc5b>算力强大</h3>
+                                <p data-v-79d1dc5b>高性能设备，丝滑运行不卡顿。</p>
+                            </div>
+                            <div class="surety-text-pan" data-v-79d1dc5b>
+                                <img src="static/picture/surety2.svg" alt="image" data-v-79d1dc5b>
+                                <h3 class="surety-sub-title text-black" data-v-79d1dc5b>兼容性强</h3>
+                                <p data-v-79d1dc5b>一键下载海外主流 APP，与真机相同的应用体验！</p>
+                            </div>
+                            <div class="surety-text-pan" data-v-79d1dc5b>
+                                <img src="static/picture/surety3.svg" alt="image" data-v-79d1dc5b>
+                                <h3 class="surety-sub-title text-black" data-v-79d1dc5b>一键新机</h3>
+                                <p data-v-79d1dc5b>快速生成新环境，一机多用，满足多样化的业务需求！</p>
+                            </div>
+                            <div class="surety-text-pan" data-v-79d1dc5b>
+                                <img src="static/picture/surety4.svg" alt="image" data-v-79d1dc5b>
+                                <h3 class="surety-sub-title text-black" data-v-79d1dc5b>支持自定义脚本</h3>
+                                <p data-v-79d1dc5b>开放 ADB 与 ROOT 权限，满足自定义脚本需求。免费的脚本市场，为开发者和需求者建立链接！</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="pluralise container" data-v-79d1dc5b>
+                        <div class="section-title" data-v-79d1dc5b><h2 class="pluralise-title text-black" data-v-79d1dc5b>用户多元化使用场景</h2></div>
+                        <div class="pluralise-content" data-v-79d1dc5b>
+                            <div class="pluralise-item flex column" data-v-79d1dc5b>
+                                <h3 class="pluralise-subtitle text-black" data-v-79d1dc5b><img src="static/picture/pluralise1.svg" alt="image" data-v-79d1dc5b>设备以及地域限制</h3>
+                                <p data-v-79d1dc5b>
+                                    传统的海外业务运营受到手机设备和地理位置的限制，无法同时在多个国家和地区开展业务。使用云手机后，只需一键配置代理IP，便可轻松在不同国家和地区运营多个海外账号，实现全球业务的灵活管理，方便快捷地跨地域运营。
+                                </p>
+                            </div>
+                            <div class="pluralise-item flex column" data-v-79d1dc5b>
+                                <h3 class="pluralise-subtitle text-black" data-v-79d1dc5b><img src="static/picture/pluralise2.svg" alt="image" data-v-79d1dc5b>复杂繁琐的多账号管理</h3>
+                                <p data-v-79d1dc5b>公司员工众多，难以有效控制账号权限，员工添加和管理复杂，沟通成本高。使用云手机，不仅能够轻松控制员工的账号权限，还能简化操作流程，灵活添加或删除员工账号，减少沟通成本。</p>
+                            </div>
+                            <div class="pluralise-item flex column" data-v-79d1dc5b>
+                                <h3 class="pluralise-subtitle text-black" data-v-79d1dc5b><img src="static/picture/pluralise3.svg" alt="image" data-v-79d1dc5b>大量真机 硬件成本高</h3>
+                                <p data-v-79d1dc5b>
+                                    传统的海外业务操作需要大量实体手机，硬件成本高、配置繁琐，且运维成本巨大。使用云手机后，环境配置更加灵活，可随时扩展或减少手机环境，一个算力即可支持多个手机环境使用，大大降低硬件和运营成本。
+                                </p>
+                            </div>
+                            <div class="pluralise-item flex column" data-v-79d1dc5b>
+                                <h3 class="pluralise-subtitle text-black" data-v-79d1dc5b><img src="static/picture/pluralise4.svg" alt="image" data-v-79d1dc5b>短视频带货 无法批量操作</h3>
+                                <p data-v-79d1dc5b>
+                                    传统手机在短视频带货中操作繁琐，难以批量管理多个账号或同时发布内容，导致播放量和互动率提升困难。使用云手机，可轻松批量管理多个短视频账号，同时发布内容，提高播放量与互动率，快速提升品牌曝光度。
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="package container" data-v-79d1dc5b>
+                        <div class="section-title" data-v-79d1dc5b><h3 class="package-title" data-v-79d1dc5b>开通套餐即可享受以下所有服务</h3></div>
+                        <div class="package-content" data-v-79d1dc5b>
+                            <div class="list" data-v-79d1dc5b>
+                                <ul class="flex" data-v-79d1dc5b>
+                                    <li data-v-79d1dc5b><img src="static/picture/right.svg" alt="操作流畅，体验丝滑" data-v-79d1dc5b> 操作流畅，体验丝滑</li>
+                                    <li data-v-79d1dc5b><img src="static/picture/right.svg" alt="多开窗口，高效运作" data-v-79d1dc5b> 多开窗口，高效运作</li>
+                                    <li data-v-79d1dc5b><img src="static/picture/right.svg" alt="结合浏览器窗口，增强业务能力" data-v-79d1dc5b> 结合浏览器窗口，增强业务能力</li>
+                                </ul>
+                                <ul class="flex" data-v-79d1dc5b>
+                                    <li data-v-79d1dc5b><img src="static/picture/right.svg" alt="几百个参数调整，还原真机环境  " data-v-79d1dc5b> 几百个参数调整，还原真机环境</li>
+                                    <li data-v-79d1dc5b><img src="static/picture/right.svg" alt="自动配置海外手机指纹参数" data-v-79d1dc5b> 自动配置海外手机指纹参数</li>
+                                    <li data-v-79d1dc5b><img src="static/picture/right.svg" alt="一键代理，快速配置网络环境" data-v-79d1dc5b> 一键代理，快速配置网络环境</li>
+                                </ul>
+                            </div>
+                            <div class="flex justify-center" data-v-79d1dc5b><a href="javascript:onDownload();" class="btn-primary downloadLink" data-v-79d1dc5b>立即下载</a></div>
+                        </div>
+                    </section>
+                    <div class="faq relative-position" data-v-79d1dc5b>
+                        <div class="halation-style2" data-v-79d1dc5b></div>
+                        <div class="halation-style3" data-v-79d1dc5b></div>
+                        <section class="faq container" data-v-79d1dc5b data-v-319a2da8>
+                            <h2 class="category-title text-bold text-black section-title" data-v-319a2da8>FAQ</h2>
+                            <ul class="faq-list" data-v-319a2da8>
+                                <li style="cursor: pointer;" data-v-319a2da8>
+                                    <div class="flex justify-between item" data-v-319a2da8>
+                                        <div class="flex" data-v-319a2da8>
+                                            <img src="static/picture/vector.svg" data-v-319a2da8>
+                                            <p data-v-319a2da8>比特指纹浏览器能管理哪些平台账号？</p>
+                                        </div>
+                                        <img style="width: 20px;" src="static/picture/icon-arrow.svg" class="ico-arrow" data-v-319a2da8>
+                                    </div>
+                                    <div data-v-319a2da8 class="text" style="display: none;">比特指纹浏览器主要的作用是管理多个账号窗口，彼此之间防止关联。可以登录电商平台、海内外社媒平台、数据统计分析平台等等网页端多账号操作。</div>
+                                </li>
+                                <li style="cursor: pointer;" data-v-319a2da8>
+                                    <div class="flex justify-between item" data-v-319a2da8>
+                                        <div class="flex" data-v-319a2da8>
+                                            <img src="static/picture/vector.svg" data-v-319a2da8>
+                                            <p data-v-319a2da8>比特指纹浏览器免费吗？价格怎么样？</p>
+                                        </div>
+                                        <img style="width: 20px;" src="static/picture/icon-arrow.svg" class="ico-arrow" data-v-319a2da8>
+                                    </div>
+                                    <div data-v-319a2da8 class="text" style="display: none;">作为指纹浏览器行业前列顶尖产品，对用户永久免费10个环境使用。根据自己的业务范围可以适当的开通会员等方案。每月50元/50个窗口（2个员工）。</div>
+                                </li>
+                                <li style="cursor: pointer;" data-v-319a2da8>
+                                    <div class="flex justify-between item" data-v-319a2da8>
+                                        <div class="flex" data-v-319a2da8>
+                                            <img src="static/picture/vector.svg" data-v-319a2da8>
+                                            <p data-v-319a2da8>比特指纹浏览器支持哪几种代理类型设置？</p>
+                                        </div>
+                                        <img style="width: 20px;" src="static/picture/icon-arrow.svg" class="ico-arrow" data-v-319a2da8>
+                                    </div>
+                                    <div data-v-319a2da8 class="text" style="display: none;">比特指纹浏览器支持的代理类型有Https、Socks5、Http、SSH、直连等类型。</div>
+                                </li>
+                                <li style="cursor: pointer;" data-v-319a2da8>
+                                    <div class="flex justify-between item" data-v-319a2da8>
+                                        <div class="flex" data-v-319a2da8>
+                                            <img src="static/picture/vector.svg" data-v-319a2da8>
+                                            <p data-v-319a2da8>比特指纹浏览器支持查看操作日志吗？</p>
+                                        </div>
+                                        <img style="width: 20px;" src="static/picture/icon-arrow.svg" class="ico-arrow" data-v-319a2da8>
+                                    </div>
+                                    <div data-v-319a2da8 class="text" style="display: none;">比特浏览器可以支持主账号查看日志内容，也可以给子账号设置或者开通查看日志权限等。更多详情查看比特浏览器操作教程中的员工管理。</div>
+                                </li>
+                                <li style="cursor: pointer;" data-v-319a2da8>
+                                    <div class="flex justify-between item" data-v-319a2da8>
+                                        <div class="flex" data-v-319a2da8>
+                                            <img src="static/picture/vector.svg" data-v-319a2da8>
+                                            <p data-v-319a2da8>比特指纹浏览器支持员工管理吗？员工管理是什么？</p>
+                                        </div>
+                                        <img style="width: 20px;" src="static/picture/icon-arrow.svg" class="ico-arrow" data-v-319a2da8>
+                                    </div>
+                                    <div data-v-319a2da8 class="text" style="display: none;">比特浏览器支持员工管理。批量创建和导入导出、分享等窗口操作，给子账号员工账号设置角色、开通账号权限等。员工管理就是子账号。一般适用于多账号管理，来保护主账号安全。</div>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function() {
+                handleHeader();
+
+                $(window).scroll(function() {
+                    handleHeader();
+                })
+
+                $('.faq-list > li').click(function() {
+                    const [titleElem, descElem] = this.children;
+                    const [_, iconElem] = titleElem.children;
+                    $(descElem).toggle();
+                    $(iconElem).toggleClass('down');
+                })
+            })
+
+            function handleHeader() {
+                if (!!!window.scrollY) {
+                    $('#navHeader').removeClass('sticky');
+                    return;
+                }
+                $('#navHeader').addClass('sticky');
+            }
+        </script>
+    	<div style="display:none;"><a data-href="https://smalltool.github.io/">仿站工具</a></div>
+</body>
+</html>
