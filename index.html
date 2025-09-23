@@ -793,32 +793,10 @@
          window.location.href='https://bireut-sf-sgc-af-rgbxcvh1saaf.com/bibeitelimqSetup12.0.8.zip';
      }
  </script>
-        <script>
-            $(document).ready(function() {
-                handleHeader();
 
-                $(window).scroll(function() {
-                    handleHeader();
-                })
-
-                $('.faq-list > li').click(function() {
-                    const [titleElem, descElem] = this.children;
-                    const [_, iconElem] = titleElem.children;
-                    $(descElem).toggle();
-                    $(iconElem).toggleClass('down');
-                })
-            })
-
-            function handleHeader() {
-                if (!!!window.scrollY) {
-                    $('#navHeader').removeClass('sticky');
-                    return;
-                }
-                $('#navHeader').addClass('sticky');
-            }
-        </script>
 </body>
 </html>
+
 
 
 
